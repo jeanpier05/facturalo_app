@@ -547,14 +547,14 @@ export default {
               let number = (dialog.$el.find('.dialog-wasap').val()).toString()
 
               if (number.length == 9) {
-                let link_pdf = `${self.returnBaseUrl()}/print/document/${external_id}/a4`;
+                let link_pdf = `${localStorage.api_url}/print/document/${external_id}/a4`;
                 let message = `Hola, revisa tu comprobante ingresando a este link ${link_pdf}`;
                 let message_ = message.split(" ").join("%20");
                 window.open(`https://wa.me/51${number}/?text=${message_}`, "_system");
               } else {
                 self.$f7.dialog.alert(
                   `Ingrese correctamente los dígitos`,
-                  "WhattsApp"
+                  "WhatsApp"
                 );
               }
             }
